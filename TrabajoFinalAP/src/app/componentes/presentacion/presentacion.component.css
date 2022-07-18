@@ -1,0 +1,70 @@
+.row{
+    padding:20px;
+}
+
+div{
+    background-color:#b0d2d3 ;
+    text-align: center;
+}
+
+#nombre{
+    font-weight: bold;
+    font-family: serif;
+    font-size: 16px;
+     margin-left: 5px;
+}
+
+#descri{
+    font-size: 12px;
+    font-family: serif;
+    margin-top: -10px;
+    margin-left: 10px;
+}
+
+#demi{
+    font-weight: bold;
+    font-family: serif;
+    font-size: 12px;
+     margin-left: 5px;
+}
+
+#texto{
+    font-size: 10px;
+    font-family: serif;
+    text-align: justify;
+    margin-top: -5px;
+    margin-left: 10px;
+}
+
+@media(min-width: 576px){
+#PerfilAP{
+    position: absolute;
+    width: 15%;
+    border-radius: 100%;
+    /*box-shadow: 3px 3px 3px gray;*/
+    left: 1%;
+    top: 150px;
+}
+}
+
+@media(min-width: 576px){
+    #PerfilAP{
+        position: absolute;
+        width: 15%;
+        border-radius: 100%;
+        /*box-shadow: 3px 3px 3px gray;*/
+        left: 1%;
+        top: 150px;
+    }
+    }
+
+    @media(max-width: 575px){
+        #PerfilAP{
+            position: absolute;
+            width: 30%;
+            border-radius: 100%;
+            /*box-shadow: 3px 3px 3px gray;*/
+            left: 33%;
+            top: 630px;
+        }
+        }
