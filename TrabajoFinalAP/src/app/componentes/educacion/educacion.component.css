@@ -1,10 +1,11 @@
 .row{
-    padding:20px
+    padding:20px;
+    width: 101%;
 }
 
 div{
     background-color: #dceff0;
-}
+ }
 
 h1{
     display:inline;

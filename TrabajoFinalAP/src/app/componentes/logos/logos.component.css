@@ -1,3 +1,23 @@
+.container{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+
+.redes{
+    margin-right: 15px;
+
+}
+
 #ArgProgLogo{
     width: 150px;
+}
+
+img{
+    width: 20px;
+}
+
+.btn{
+    border-width: 0.5px;
 }

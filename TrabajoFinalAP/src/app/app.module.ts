@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LogosComponent } from './componentes/logos/logos.component';
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
-import { RedesComponent } from './componentes/redes/redes.component';
 import { FondoComponent } from './componentes/fondo/fondo.component';
 import { PresentacionComponent } from './componentes/presentacion/presentacion.component';
 import { TrabajoComponent } from './componentes/trabajo/trabajo.component';
@@ -19,7 +18,6 @@ import { ProyectoComponent } from './componentes/proyecto/proyecto.component';
     AppComponent,
     LogosComponent,
     EncabezadoComponent,
-    RedesComponent,
     FondoComponent,
     PresentacionComponent,
     TrabajoComponent,
