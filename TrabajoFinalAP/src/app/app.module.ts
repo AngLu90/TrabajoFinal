@@ -8,6 +8,11 @@ import { EncabezadoComponent } from './componentes/encabezado/encabezado.compone
 import { RedesComponent } from './componentes/redes/redes.component';
 import { FondoComponent } from './componentes/fondo/fondo.component';
 import { PresentacionComponent } from './componentes/presentacion/presentacion.component';
+import { TrabajoComponent } from './componentes/trabajo/trabajo.component';
+import { EducacionComponent } from './componentes/educacion/educacion.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { ConocimientosComponent } from './componentes/conocimientos/conocimientos.component';
+import { ProyectoComponent } from './componentes/proyecto/proyecto.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +21,16 @@ import { PresentacionComponent } from './componentes/presentacion/presentacion.c
     EncabezadoComponent,
     RedesComponent,
     FondoComponent,
-    PresentacionComponent
+    PresentacionComponent,
+    TrabajoComponent,
+    EducacionComponent,
+    ConocimientosComponent,
+    ProyectoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgCircleProgressModule.forRoot({}),
   ],
   providers: [],
   bootstrap: [AppComponent]

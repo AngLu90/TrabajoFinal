@@ -1,5 +1,5 @@
 .row{
-    padding:20px;
+    padding:30px;
 }
 
 div{
@@ -10,12 +10,13 @@ div{
 #nombre{
     font-weight: bold;
     font-family: serif;
-    font-size: 16px;
-     margin-left: 5px;
+    font-size: 18px;
+    margin-left: 5px;
+    margin-top: 10px;
 }
 
 #descri{
-    font-size: 12px;
+    font-size: 14px;
     font-family: serif;
     margin-top: -10px;
     margin-left: 10px;
@@ -24,12 +25,12 @@ div{
 #demi{
     font-weight: bold;
     font-family: serif;
-    font-size: 12px;
+    font-size: 16px;
      margin-left: 5px;
 }
 
 #texto{
-    font-size: 10px;
+    font-size: 14px;
     font-family: serif;
     text-align: justify;
     margin-top: -5px;
@@ -54,7 +55,7 @@ div{
         border-radius: 100%;
         /*box-shadow: 3px 3px 3px gray;*/
         left: 1%;
-        top: 150px;
+        top: 170px;
     }
     }
 
