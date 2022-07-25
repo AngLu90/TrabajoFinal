@@ -42,10 +42,14 @@ public class PersonaCont {
     public Persona editPersona(@PathVariable("id") Long id,
                                @RequestParam("nombre") String nombreNew,
                                @RequestParam("apellido") String apellidoNew,
+                               @RequestParam("descr") String descrNew,
+                               @RequestParam("acerca") String acercaNew,
                                @RequestParam("img") String imgNew){
         Persona persona = interfazPersonaSer.findPersona(id);
         persona.setNombre(nombreNew);
         persona.setApellido(apellidoNew);
+        persona.setDescr(descrNew);
+        persona.setAcerca(acercaNew);
         persona.setImg(imgNew);        
         
         interfazPersonaSer.savePersona(persona);

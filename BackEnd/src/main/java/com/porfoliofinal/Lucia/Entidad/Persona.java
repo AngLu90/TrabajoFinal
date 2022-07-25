@@ -21,8 +21,14 @@ public class Persona{
     @NotNull
     @Size(min=1, max=50, message="No cumle con la longitud")
     private String apellido;
+    @NotNull
+    @Size(min=1, max=150, message="No cumle con la longitud")
+    private String descr;
+    @NotNull
+    //@Size(min=1, max=2000000, message="No cumle con la longitud")
+    private String acerca;
     @Size(min=1, max=50, message="No cumle con la longitud")
-    private String img;     
+    private String img; 
     
-}
+ }
 
