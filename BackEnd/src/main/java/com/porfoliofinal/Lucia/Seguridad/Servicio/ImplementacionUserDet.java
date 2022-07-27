@@ -12,6 +12,10 @@ import org.springframework.stereotype.Service;
 
 public class ImplementacionUserDet implements UserDetailsService {
 
+    public static UserDetails loadUsersByUsername(String nombreUsuario) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     @Autowired
     UsuarioSer usuarioSer;
 
