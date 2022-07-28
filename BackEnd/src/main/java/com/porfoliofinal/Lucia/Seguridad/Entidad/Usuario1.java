@@ -13,7 +13,7 @@ public class Usuario1 implements UserDetails {
     private String nombreUsuario;
     private String mail;
     private String contrasena;
-    private Collection<? extends GrantedAuthority> aut;
+    private Collection<? extends GrantedAuthority> authentication;
 
     public Usuario1() {
     }
@@ -23,20 +23,20 @@ public class Usuario1 implements UserDetails {
         this.nombreUsuario = nombreUsuario;
         this.mail = mail;
         this.contrasena = contrasena;
-        this.aut = aut;
+        this.authentication = authentication;
     }
-
-    public static Usuario1 build(Usuarios usuarios) {
-        List<GrantedAuthority> aut;
-        aut = usuarios.getRoles().stream()
+  
+        public static Usuario1 build(Usuarios usuarios) {
+        List<GrantedAuthority> authentication;
+        authentication = usuarios.getRoles().stream()
                 .map(roles -> new SimpleGrantedAuthority(roles.getNombreRol().name())).collect(Collectors
                 .toList());
-        return new Usuario1(usuarios.getNombre(), usuarios.getNombreUsuario(), usuarios.getMail(), usuarios.getContrasena(), aut);
+        return new Usuario1(usuarios.getNombre(), usuarios.getNombreUsuario(), usuarios.getMail(), usuarios.getContrasena(), authentication);
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return aut;
+        return authentication;
     }
 
     @Override
