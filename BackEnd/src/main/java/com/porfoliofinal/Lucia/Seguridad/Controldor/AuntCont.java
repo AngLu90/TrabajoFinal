@@ -53,28 +53,25 @@ public class AuntCont {
     @PostMapping("/nuevo")
 
     public ResponseEntity<?> nuevo(@Valid @RequestBody NuevoUsuario nuevoUsuario, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
+        if (bindingResult.hasErrors()) 
             return new ResponseEntity(new Mensaje("Campos mal puestos o email invalido"),
                     HttpStatus.BAD_REQUEST);
-        }
-
-        if (usuarioSer.existsByNombreUsuario(nuevoUsuario.getNombreUsuario())) {
+       
+        if (usuarioSer.existsByNombreUsuario(nuevoUsuario.getNombreUsuario())) 
             return new ResponseEntity(new Mensaje("Este nombre de usuariio ya existe"),
                     HttpStatus.BAD_REQUEST);
-        }
-
-        if (usuarioSer.existsByNombreUsuario(nuevoUsuario.getMail())) {
+       
+        if (usuarioSer.existsByNombreUsuario(nuevoUsuario.getMail())) 
             return new ResponseEntity(new Mensaje("Este mail ya existe"),
                     HttpStatus.BAD_REQUEST);
-        }
-
+        
         Usuarios usuarios = new Usuarios(nuevoUsuario.getNombre(), nuevoUsuario.getNombreUsuario(),
                 nuevoUsuario.getMail(), passwordEncoder.encode(nuevoUsuario.getContrasena()));
 
         Set<Roles> roles = new HashSet<>();
         roles.add(rolSer.getByNombreRol(NombreRol.ROL_USER).get());
 
-        if (nuevoUsuario.getRoles().contains("admin")) {
+        if (nuevoUsuario.getRoles().contains("admin")) 
             roles.add(rolSer.getByNombreRol(NombreRol.ROL_ADMIN).get());
             usuarios.setRoles(roles);
             usuarioSer.save(usuarios);
@@ -84,27 +81,20 @@ public class AuntCont {
 
         @PostMapping("/login")
 
-        public ResponseEntity<Dto> login
-        (@Valid
-        @RequestBody
-        LoginUsuario loginUsuario, BindingResult bindingResult
-        )
-    (if (bindingResult.hasErrors()) {
+        public ResponseEntity<Dto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult)(
+        if (bindingResult.hasErrors()) 
             return new ResponseEntity(new Mensaje("Campo mal puesto"), HttpStatus.BAD_REQUEST);
-        }
+        
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUsuario.getNombreUsuario(), loginUsuario.getContrasena()));
 
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-                loginUsuario.getNombreUsuario(), loginUsuario.getContrasena()));
-
-        SecurityContextHolder.getContext().getAuthentication(authentication);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
 
         String jwt = provider.generateToken(authentication);
 
         UserDetails userDetails = (UserDetails) authentication getPrincipal();
 
-        Dto dto = new Dto(dto, userDetails.getUsername(), userDetails.getAuthorities());
+        Dto dto = new Dto(jwt, userDetails.getUsername(), userDetails.getAuthorities());
 
-        return new ResponseEntity(dto, HttpStatus.OK);
+        return new ResponseEntity(dto, HttpStatus.OK); 
 
-    }
 }
