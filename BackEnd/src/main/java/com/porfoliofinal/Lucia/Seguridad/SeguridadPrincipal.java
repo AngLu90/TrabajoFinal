@@ -42,12 +42,12 @@ public class SeguridadPrincipal extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
                 .authorizeRequests()
-                .andMatchers("/auth/**").permitAll()
-                .anyRequest().authenticated
+                .antMatchers("/auth/**").permitAll()
+                .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(entryPoint)
                 .and()
-                .sessionManagment().sessionCreationPolicy(SessionCreationPolicy.STATELESS) ;
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) ;
     
     }
 
