@@ -57,6 +57,7 @@ public class SeguridadPrincipal extends WebSecurityConfigurerAdapter {
         return super.authenticationManager();
     }
 
+    @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean(); 
